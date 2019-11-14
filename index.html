@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Générateur de citations</title>
+</head>
+
+<body>
+
+    <div class="container" style="min-width: 400px">
+        <div id="jumbotron">
+            <h1>Générateur de citations</h1>
+            <blockquote class="blockquote">
+                <p>Projet 5 - Développeur d'Application Frontend</p>
+                <footer class="blockquote-footer">OpenClassrooms.com</footer>
+            </blockquote>
+        </div>
+
+        <!-- ########## Onglets ########## -->
+        <div>
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#accueil">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#etape1">&Eacute;tape 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#etape2">&Eacute;tape 2</a>
+                </li>
+            </ul>
+
+            <!-- ########## Contenu des onglets ########## -->
+            <!-- ########## Accueil ########## -->
+            <div class="tab-content">
+                <div id="accueil" class="container tab-pane active"><br>
+                    <h3>Accueil</h3>
+                    <p>Explications : l'objectif est simple : construire un générateur de citations en javascript. Les citations seront construites aléatoirement en assemblant des morceaux de phrase. Voir la <a href="https://openclassrooms.com/projects/imaginez-un-generateur-de-citations" target="_blank">description complète du projet</a>.</p>
+                    <p>Le projet se compose de 2 étapes de difficulté progressive.</p>
+                </div>
+
+                <!-- ########## Etape 1 ########## -->
+                <div id="etape1" class="container tab-pane fade"><br>
+                    <h3>&Eacute;tape 1</h3>
+                    <h4>Des citations aléatoires</h4>
+                    <p>Pour cette première partie, le générateur fonctionne dans la console web. Voici comment ouvrir votre console web :</p>
+                    <div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%">Navigateurs</th>
+                                    <th>Accès rapide</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="images/Firefox_Logo.png" alt="Logo Firefox" width="50" height="50"></td>
+                                    <td><kbd>Ctrl + Maj + I</kbd> ou <kbd>F12</kbd><br> ou via le menu Firefox > Développement web > Console web</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/IE_Logo.png" alt="Logo IE" width="50" height="50"></td>
+                                    <td><kbd>F12</kbd><br> ou via le menu Outils > Outils de Développement</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/Chrome_Logo.png" alt="Logo Chrome" width="50" height="50"></td>
+                                    <td><kbd>Ctrl + Maj + J</kbd> ou <kbd>F12</kbd><br> ou via le menu Outils > Plss d'outils > Outils de développement</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/Safari_Logo.png" alt="Logo Safari" width="50" height="50"></td>
+                                    <td>Dans le menu Options > Avancées. Cocher la case "Afficher le menu Développement dans la barre des menus" puis<br><kbd>Ctrl + Maj + I</kbd> ou <kbd>Ctrl + Maj + C</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/Opera_Logo.png" alt="Logo Opera" width="50" height="50"></td>
+                                    <td><kbd>Ctrl + Maj + I</kbd><br> ou via le menu Page > Outils de Développement > Opera Dragonfly</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><button type="button" id="lancerScriptEtape1" class="btn btn-outline-dark">Lancer le script</button></p>
+                </div>
+                <!-- ########## Etape 2 ########## -->
+                <div id="etape2" class="container tab-pane fade"><br>
+                    <h3>&Eacute;tape 2</h3>
+                    <h4>Des citations configurables</h4>
+                    <p>Pour cette deuxième partie, le générateur affiche les citations sur la page web. Laisser vous guider :</p>
+
+                    <form name="form">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12" style="text-align: center; margin-bottom: 5px;">
+                                <div class="list-group-item list-group-item-secondary title-box">Choisissez une catégorie de citation
+                                </div>
+                                <div class="list-group-item list-group-item-secondary">
+                                    <input type="radio" name="categorie" value="patronnale" id="patronnale" checked /> <label for="patron">Les patronnales</label>&nbsp;
+                                    <input type="radio" name="categorie" value="salariale" id="salariale" /> <label for="salarie">Les salariales</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12" style="text-align: center; margin-bottom: : 5px;">
+                                <div class="list-group-item list-group-item-secondary title-box">Indiquez le nombre de citations à générer
+                                </div>
+                                <div class="list-group-item list-group-item-secondary">
+                                    <input type="number" name="nbcit" id="nbcit" min="1" max="5" step="1" value="1">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-12" style="text-align: center; margin-bottom: 5px">
+                                <div class="list-group-item list-group-item-secondary title-box"><input type="submit" value="Afficher" /></div>
+                                <div class="list-group-item list-group-item-secondary">
+                                    
+                                    <input type="reset" value="Effacer" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div id="place1">
+                        <div id="place2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lance le script de l'étape 1 au clic du bouton 'lancer le script'
+        window.addEventListener("load", function(event) {
+            var button = document.getElementById("lancerScriptEtape1"); 
+            button.addEventListener("click", function dynamicallyLoadScript(url) {
+                var script = document.createElement("script"); // Make a script DOM node
+                script.src = "etape1.js"; // Set it's src to the provided URL
+
+                document.body.appendChild(script);
+            });
+        });
+
+    </script>
+    <script src="etape2.js"></script>
+
+</body>
+
+</html>
